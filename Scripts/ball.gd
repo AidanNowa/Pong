@@ -23,6 +23,7 @@ func _physics_process(delta):
 	if collision:
 		collider = collision.get_collider()
 		#if ball hits paddle
+		$AudioStreamPlayer2D.play()
 		if collider == $"../Player" or collider == $"../CPU":
 			speed += ACCELERATION
 			#standard godot function for bouncing

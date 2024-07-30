@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://u1a4cl0vy6vk"]
+[gd_scene load_steps=9 format=3 uid="uid://u1a4cl0vy6vk"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_in5qx"]
 [ext_resource type="PackedScene" uid="uid://c56cgrig45epw" path="res://Scenes/player.tscn" id="1_ybjy7"]
 [ext_resource type="PackedScene" uid="uid://jxvj18xj5drw" path="res://Scenes/ball.tscn" id="2_v2it4"]
 [ext_resource type="Script" path="res://Scripts/CPU.gd" id="3_g1cho"]
+[ext_resource type="AudioStream" uid="uid://t0eh587ph47i" path="res://Assets/JDSherbert - Ultimate UI SFX Pack - Error - 1.mp3" id="5_vb5ew"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mtugn"]
 size = Vector2(1154, 66)
@@ -470,6 +471,9 @@ vertical_alignment = 1
 [node name="BallTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_vb5ew")
 
 [connection signal="body_entered" from="ScoreLeft" to="." method="_on_score_left_body_entered"]
 [connection signal="body_entered" from="ScoreRight" to="." method="_on_score_right_body_entered"]
